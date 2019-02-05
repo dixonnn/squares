@@ -58,8 +58,9 @@ defmodule Squares do
     Enum.map(
       first_values,
       fn x ->
-        if Math.sum_of_squares(x, k) |> Math.is_perfect_square do
-          x
+        sq = Math.sum_of_squares(x, k)
+        if sq |> Math.is_perfect_square do
+          {x, sq}
         end
       end
     )
