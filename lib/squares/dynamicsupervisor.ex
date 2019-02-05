@@ -1,4 +1,4 @@
-defmodule Squares.DynamicSupervisor do
+defmodule Squares.Parent do
   @moduledoc """
 
   """
@@ -12,7 +12,7 @@ defmodule Squares.DynamicSupervisor do
 
   def create_children(num, first \\ true) do
 
-    current_children = DynamicSupervisor.which_children(Squares.DynamicSupervisor)
+    current_children = DynamicSupervisor.which_children(Squares.Parent)
     if first do
       terminate_children(current_children)
     end

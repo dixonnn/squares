@@ -8,7 +8,7 @@ defmodule Squares.Application do
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
-      {DynamicSupervisor, strategy: :one_for_one, name: Squares.DynamicSupervisor}
+      {DynamicSupervisor, strategy: :one_for_one, name: Squares.Parent}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
